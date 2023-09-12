@@ -1,8 +1,11 @@
 import logoCHA from '~/assets/images/cha-logo.png';
 import logoVIAM from '~/assets/images/viam-logo.png'
 import './Login.css'
+import { useTranslation } from 'react-i18next';
 
 function Login() {
+  const { t } = useTranslation()
+
   return (
     <>
       <div className="login__container">
@@ -19,7 +22,7 @@ function Login() {
             onClick={() => {}}
             type="button"
           >
-            Đăng nhập
+            {t('login_signin')}
           </button>
           <a href="https://facebook.com" className="login__forgot-password">
 						Quên mật khẩu?
