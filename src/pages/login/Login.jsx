@@ -1,33 +1,34 @@
-import logoCHA from '~/assets/images/cha-logo.png';
+import logoCHA from '~/assets/images/cha-logo.png'
 import logoVIAM from '~/assets/images/viam-logo.png'
-import './Login.css'
-import { useTranslation } from 'react-i18next';
+import './Login.scss'
+import clsx from 'clsx'
+import styles from '~/pages/login/Login.module.scss'
+
+import React from 'react'
 
 function Login() {
-  const { t } = useTranslation()
-
   return (
     <>
-      <div className="login__container">
-        <div className="login__box">
-          <div className="login__header mb-10">
+      <div className={clsx(styles.container)}>
+        <div className={clsx(styles.box)}>
+          <div className={clsx(styles.header, "mb-10")}>
             <h2>HỆ THỐNG THU GIÁM SÁT VÀ THU THẬP DỮ LIỆU</h2>
           </div>
-          <div className="login__img mb-40">
+          <div className={clsx(styles.img, "mb-40")}>
             <img height="150px" width="auto" src={logoCHA} alt="viam lab" />
             <img height="150px" width="auto" src={logoVIAM} alt="cha company" />
           </div>
           <button
-            className="login__button"
+            className={clsx(styles.btn)}
             onClick={() => {}}
             type="button"
           >
-            {t('login_signin')}
+            Đăng nhập
           </button>
-          <a href="https://facebook.com" className="login__forgot-password">
+          <a href="" className={clsx(styles.forgot_password)}>
 						Quên mật khẩu?
 					</a>
-          <span className="login__copyrights">© all copyrights reserved</span>
+          <span className={clsx(styles.copyrights)}>© all copyrights reserved</span>
         </div>
       </div>
     </>
